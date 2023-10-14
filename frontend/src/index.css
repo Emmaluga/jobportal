@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+
+}
+
+.brand{
+
+  font-size: "2rem";
+  color: black;
+  
+}
+
+.brand-new{
+
+  font-size: "2rem";
+  color: white;
+  
+  
+}
+
+
+.navlink{
+  font-family: "Roboto" ;
+  text-decoration: none;
+  margin: 0px 5px;
+  font-size: 20px;
+  color: black;
+ 
+ 
+}
+
+.navlink-new{
+  font-family: "Roboto" ;
+  text-decoration: none;
+  margin: 0px 5px;
+  font-size: 20px;
+  color: white;
+ 
+}
+
+.logo-brand-new{
+
+  font-family: "Roboto";
+  color: red;
+  font-size: 1.7rem;
+  
+ 
+}
+
+
+
+.hero{
+  /* padding: 100px 0; */
+  /* height: 100vh; */ 
+  background-color:  #ADD8E6;
+}
+.hero-text{
+  font-family: "Robotot";
+}
+.logo{
+ 
+  color: black;
+  font-size: 1.7rem;
+  
+}
+.logo{
+ 
+  color: white;
+  font-size: 1.7rem;
+  
+}
+
+
+.logo-brand{
+  font-family: "Roboto";
+  color: red;
+  font-size: 1.7rem;
+ 
+  
+}
+
+
+
+.colorread{
+  background-color: blue;
+}
+
+.hero-btn{
+  background-color: red;
+  border: red;
+  color: white;
+}
+
+.employers{
+  padding: 100px 0;
+  background-color: lightblue;
+}
+
