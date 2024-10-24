@@ -1,49 +1,50 @@
-require("dotenv").config()
-const express = require("express")
-const connectDB = require("./Config/connectDB")
-const cors = require("cors")
-const notFound = require("./Middleware/routeMiddleware")
-const errHandler = require("./Middleware/errMiddleware")
-const authRoute = require("./Model/userModel")
-const cookieparser = require("cookie-parser")
+require('dotenv').config()
+const express = require('express')
+const cors = require('cors')
+const cookiePerser = require('cookie-parser')
+const notFound = require('./middleware/notFoundMiddleware')
+const errHandler = require('./middleware/errHandlerMilldleware')
+const connectDB = require('./config/conncetDB')
+const jobSeekerAuthRoute = require('./route/jobSeekerAuthRoute')
+const employerAuthRoute = require('./route/employerRoute')
+const jobSeekerUserRoute = require('./route/jobSeekerUserRoute')
+const employerUserRoute = require('./route/employUserRoute')
+// const jobCatRoute = require('./route/jobCatRoute')
+const jobRoute = require('./route/jobRoute')
 const app = express()
-// connectDB()
-
-
 
 //middleware
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
-app.use(cors())
-app.use(cookieparser())
-
-//routes
-app.use("/api", authRoute)
+app.use(express.urlencoded({extended:true}))
+app.use(cors({credentials:true, origin: true}))
+app.use(cookiePerser())
 
 
+//route
+app.use('/api', jobSeekerAuthRoute)
+app.use('/api', employerAuthRoute)
+app.use('/api', jobSeekerUserRoute)
+app.use('/api', employerUserRoute )
+app.use('/api', jobRoute )
 
 
-//middleware
+
+//custom middleware
+app.use(notFound)
 app.use(errHandler)
-app.use("*", notFound)
 
+const port = process.env.port || 5000
 
-
-const port = process.env.port || 8000
-
-const start = ()=> {
+const start = async ()=> {
     try {
-        connectDB(process.env. MONGODBURL)
-        console.log("connected")
+       connectDB( process.env.MONGODBURL )
+        console.log('connected to DB')
+        app.listen(port, ()=> console.log(` server running on port ${port}`))
+        
     } catch (error) {
-        console.log("failed")
+  console.log(' failed to connect to DB')
         
     }
 }
 
-app.listen(port, ()=> console.log(`server running on port ${port}`))
-
-
-start()
-
-
+  start()

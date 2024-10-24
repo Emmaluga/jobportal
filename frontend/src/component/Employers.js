@@ -22,8 +22,11 @@ const Employers = () => {
         <h1>Attract the best minds for your tasks</h1>
         <button>sign-up</button>
         <button>sign-up</button>
+       
         </div>
 
+     
+               
      </Col>
 
      <Col md={6} className=''>

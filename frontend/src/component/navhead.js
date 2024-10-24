@@ -8,7 +8,7 @@ import Form from  'react-bootstrap/Form';
 // import NavDropdown from 'react-bootstrap/Button';
 import { FaPeopleCarry } from "react-icons/fa";
 import { Link, NavLink } from 'react-router-dom';
-import image1 from "../image/image2.png"
+// import image1 from "../image/image2.png"
 
 
 const Navhead = ()=>  {
